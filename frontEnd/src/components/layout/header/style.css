@@ -1,0 +1,85 @@
+.header-top-bar {
+    background-color: var(--cor-secondary-dark);
+    color: var(--color-secondary-white);
+    text-align: center;
+    padding: 10px 5%;
+}
+.header-title-top {
+    font-size: 0.8em;
+    letter-spacing: 2px;
+}
+.main-header {
+    background-color: var(--color-primary-orange);
+    display: flex;
+    /* Alinha o grupo esquerdo e o botão WhatsApp nas extremidades */
+    gap: 310px;
+    align-items: center; 
+    padding: 20px 5%; 
+    
+}
+.header-left {
+    display: flex; 
+    gap: 20px; /* Ajuste este valor para controlar a distância entre os blocos */
+}
+
+/* 5. Seção de Imagem e Clima/Temperatura */
+.header-image {
+    width: 100px; 
+    height: auto;
+ 
+}
+.header-climate-info{
+    display: flex;
+    align-items: center;
+}
+.temperature-values{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0; 
+    line-height: 1.3; /* Espaçamento mais apertado entre as linhas */
+    color: var(--color-primary-terra);
+    font-family: var(--font-body);
+    font-size: var(--font-body-size);
+    
+}
+.local-temperature{
+    color: var(--color-primary-terra);
+    white-space: nowrap; /* Garante que a quebra não ocorra no meio do link */
+    font-family: var(--font-body);
+    font-size: var(--font-body-size);
+}
+.nav-header{
+   height: 100px;
+   display: flex;
+      
+}
+.navigation-list {   
+    display: flex; 
+    list-style: none;
+    gap: 40px; 
+    
+    
+}
+.navigation-list a {
+   
+    text-decoration: none;
+    color: var(--color-primary-terra);
+    font-family: var(--font-body);
+    font-size: var(--font-body-size);
+    transition: color 0.3s;
+    white-space: nowrap; /* Garante que a quebra não ocorra no meio do link */
+}
+
+.navigation-list a:hover {
+    color: var(--color-secondary-white);
+}
+.separator-header {
+    width: 100%;
+    
+    /* 🎯 LINHA SÓLIDA */
+    border-top: 1px solid #5B2E0F; 
+
+     
+  
+}
