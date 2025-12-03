@@ -1,0 +1,24 @@
+.card-bread{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px;
+    align-items: center;
+
+    text-align: center;
+    text-shadow: none;
+    box-shadow: none;
+
+}
+
+.container-reviews{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    
+
+}
+
+
+

@@ -1,0 +1,80 @@
+/* Container Principal (Section) */
+.presentationSection {
+    background-color: var(--color-primary-orange);
+    padding: 60px 20px;
+   
+}
+
+
+.content-container {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    /* REMOVE o gap fixo GRANDE para um valor mais gerenciável */
+    gap: 50px; 
+    align-items: flex-start; 
+    max-width: 1400px; /* Reduzi o max-width para um valor mais comum */
+    margin: 0 auto; 
+    padding: 45px 0;
+    /* CRUCIAL: Permite que as colunas quebrem a linha */
+    flex-wrap: wrap; 
+}
+
+
+.left-column {
+    display: flex;
+    flex-direction: column; 
+    /* Reduz o gap alto */
+    gap: 40px; 
+    /* Permite que a coluna ocupe metade do espaço e enrole */
+    flex-basis: 45%; 
+    min-width: 300px; /* Largura mínima para evitar quebras estranhas */
+    text-align: center; /* Centraliza o texto */
+}
+
+.left-column h2 {
+    /* REMOVE A LARGURA FIXA: width: 650px; */
+    color: var(--color-primary-terra);
+    font-family: var(--font-title);
+    font-size: var(--font-hideline-h2-size);
+    /* Mantém o texto centralizado */
+    text-align: center; 
+}
+.right-column {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 50px; 
+    /* Permite que a coluna ocupe metade do espaço e enrole */
+    flex-basis: 45%; 
+    min-width: 300px; /* Largura mínima para evitar quebras estranhas */
+    text-align: center; /* Centraliza o texto */
+}
+
+.right-column h3 {
+    /* REMOVE A LARGURA FIXA: width: 650px; */
+    color: var(--color-primary-terra);
+    font-family: var(--font-title);
+    font-size: var(--font-hideline-h3-size);
+    /* Mantém o texto centralizado */
+    text-align: center; 
+    max-width: 600px; /* Adiciona um max-width para não esticar demais em telas grandes */
+}
+
+.separatorPresentation {    
+    display: flex; /* Habilita o Flexbox */
+    align-items: center; /* Centraliza verticalmente o texto e a linha */
+    width: 100%; /* Define uma largura máxima para o componente (ajuste conforme necessário) */
+    max-width: 1800px; /* Impede que ele fique muito largo em telas grandes */
+    margin: 0px auto; /* Centraliza horizontalmente e adiciona margens superior/inferior */
+    flex-grow: 1; /* Faz a div preencher o espaço restante */
+    height: 2px; /* Espessura da linha (ajuste para a espessura desejada) */
+    background-color: var(--color-primary-terra);
+    
+    
+}
+
+.left-column img, .right-column img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

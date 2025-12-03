@@ -1,0 +1,104 @@
+main {
+    display: flex;
+    /* Altera de space-evenly para space-between ou center,
+       e remove o gap alto para ser tratado por media query */
+    justify-content: space-between;
+    align-items: center;
+    /* Diminui o gap para um valor inicial mais seguro */
+    gap: 40px; 
+    /* Padding horizontal deve ser relativo ou percentual */
+    padding: 60px 5%; /* Use porcentagem para laterais */
+    background-color: var(--color-primary-orange); 
+    flex-wrap: wrap; /* CRUCIAL: Permite que os itens quebrem a linha */
+}
+
+.content-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Permite que o bloco de texto ocupe toda a largura disponível
+       antes de quebrar a linha */
+    flex-basis: 500px; 
+    /* Adiciona margem se houver quebra de linha (para telas menores) */
+    margin-bottom: 30px; 
+}
+
+h1{ 
+    font-size: var(--font-hideline-h1-size);
+    font-family: var(--font-title);
+       
+    
+}
+
+
+.content-main p{
+    font-size: var(--font-body-size);
+    color: var(--color-primary-terra); /* Cor da Fonte */
+    font-family: var(--font-body); /* Tamanho da Fonte */
+    width: 508px;
+    line-height: 30px;/* Altura da Linha */
+
+}
+
+.btn-main-actions{
+    display: flex;
+    gap: 20px;
+    
+}
+
+
+
+
+/* --- Media Query para Telas Médias (Ex: Tablets, ~768px e abaixo) --- */
+@media (max-width: 900px) {
+    main {
+        /* Centraliza os blocos quando eles quebrarem */
+        justify-content: center;
+        /* Padding superior e inferior para criar mais espaço */
+        padding: 40px 5%; 
+        /* Diminui o gap entre os blocos */
+        gap: 30px; 
+    }
+
+    /* Reduz o tamanho da fonte para melhor leitura em telas menores */
+    h1 {
+        font-size: calc(var(--font-hideline-h1-size) * 0.8);
+    }
+}
+
+/* --- Media Query para Telas Pequenas (Ex: Celulares, ~600px e abaixo) --- */
+@media (max-width: 600px) {
+    main {
+        /* Garante que os itens fiquem centralizados na coluna */
+        flex-direction: column; 
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .content-main {
+        align-items: center; /* Centraliza o botão e outros elementos */
+        /* Garante que o conteúdo de texto ocupe a largura total */
+        flex-basis: auto; 
+        margin-bottom: 20px;
+    }
+    
+    h1, .content-main p {
+        /* Ocupa a maior parte da largura, mas deixa margem lateral */
+        width: 90%; 
+        margin: 0 auto;
+    }
+
+    /* Centraliza o botão de contato */
+    .btn-main-actions {
+        justify-content: center;
+    }
+
+    /* Reduz ainda mais o tamanho da fonte */
+    h1 {
+        font-size: calc(var(--font-hideline-h1-size) * 0.6);
+    }
+
+    main img {
+        /* Diminui a imagem em telas muito pequenas */
+        max-width: 90%; 
+    }
+}

@@ -1,19 +1,25 @@
+/* Tarja preta do topo do Header */
 .header-top-bar {
     background-color: var(--cor-secondary-dark); 
     text-align: center;  
-    padding: 10px; 
-
+    padding: 20px; 
 }
+
+/* Texto da Tarja preta do topo do Header */
 .header-title-top {
+    font-family: var(--font-body);
     font-size: var(--font-body-size);
-    color: var(--color-secondary-white);    
+    color: var(--color-secondary-white);
+    display: flex;
+    justify-content: center;    
     
 }
+/* Toda a parte do Header em Laranja */
 .main-header {
     background-color: var(--color-primary-orange);
     display: flex;
-    /* Alinha o grupo esquerdo e o botão WhatsApp nas extremidades */
-    gap: 310px;
+    justify-content: space-between;
+    /* Alinha o grupo esquerdo e o botão WhatsApp nas extremidades */    
     align-items: center; 
     padding: 20px 70px; 
     
@@ -55,10 +61,12 @@
    display: flex;
       
 }
+/* Menu de navegação do Header */
 .navigation-list {   
     display: flex; 
+    align-items: center;
     list-style: none;
-    gap: 40px; 
+    gap: 80px; 
     
     
 }
@@ -77,10 +85,14 @@
 }
 .separator-header {
     width: 100%;
-    
-    /* 🎯 LINHA SÓLIDA */
-    border-top: 1px solid #5B2E0F; 
+    height: 2px; /* Espessura da linha (ajuste para a espessura desejada) */
+    background-color: var(--color-primary-terra);
 
      
   
+}
+
+
+.whatsapp-icon{
+    width: 200px;
 }

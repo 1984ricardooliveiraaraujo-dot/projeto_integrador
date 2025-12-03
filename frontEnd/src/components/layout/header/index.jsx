@@ -36,7 +36,6 @@ export const Header = () => {
         <div className="main-header">
           <div className="header-left">
             <img src={logo} alt="Logo" className="header-image" />
-
             {/* O bloco de clima mostra apenas a mensagem de carregamento */}
             <div className="header-climate-info">
               <div className="temperature-header">
@@ -44,32 +43,36 @@ export const Header = () => {
               </div>
             </div>
           </div>
-
           {/* Mantendo Navegação e WhatsApp no retorno de carregamento */}
           <nav className="nav-header">{/* ... Navegação ... */}</nav>
           <nav className="header-right-actions">{/* ... WhatsApp ... */}</nav>
         </div>
-        <div className="separator-header"></div>
+        <div className="separator-header"></div>{" "}
+        {/* Tarja de separação do Header com Main */}
       </header>
     );
   }
 
   return (
     <header className="container-header">
-      {/* todo o header */}
+      {/* container-header => todo o header */}
       <div className="header-top-bar">
-        <span className="header-title-top">SEJA BEM VINDO!</span>
+        {" "}
+        {/* header-top-bar => Tarja preta do topo do Header */}
+        <span className="header-title-top">SEJA BEM VINDO!</span>{" "}
+        {/* header-title-top => Span para criação do texto dentro da Tarja preta do topo do Header */}
       </div>
 
       <div className="main-header">
+        {" "}
+        {/* main-header => Toda a parte do Header em Laranja */}
         <div className="header-left">
-          {/* 1. LOGO */}
+          {" "}
+          {/* header-left => Logo */}
           <img src={logo} alt="" className="header-image" />
-
           {/* 2. CLIMA E TEMPERATURA: AGORA COM DADOS GARANTIDOS */}
           <div className="header-climate-info">
             <div className="temperature-header">
-              {/* Note que as verificações 'temperatura && temperatura.main ?' não são mais necessárias aqui */}
               <p className="local-temperature">Hoje em: {temperatura.name}</p>
 
               <div className="temperature-values">
@@ -79,7 +82,6 @@ export const Header = () => {
             </div>
           </div>
         </div>
-
         {/* 3. NAVEGAÇÃO */}
         <nav className="nav-header">
           <ul className="navigation-list">
@@ -94,16 +96,15 @@ export const Header = () => {
             </li>
           </ul>
         </nav>
-
         {/* 4. AÇÕES DIREITAS (WhatsApp) */}
         <nav className="header-right-actions">
           <a
-            href="https://api.whatsapp.com/send?phone=SEU_NUMERO_AQUI&text=Olá! Gostaria de fazer um pedido."
+            href="https://api.whatsapp.com/send?phone=11952409296&text=Olá! Gostaria de fazer um pedido."
             target="_blank"
             className="whatsapp-button"
             rel="noopener noreferrer" // Boa prática para target="_blank", gera mais segurança para o usuario
           >
-            <img src={whats} alt="WhatsApp Icon" className="whatsapp-icon" />{" "}
+            <img src={whats} alt="WhatsApp Icon" className="whatsapp-icon" />
           </a>
         </nav>
       </div>

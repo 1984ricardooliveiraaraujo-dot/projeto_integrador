@@ -1,0 +1,92 @@
+.sectionOurBreads {
+    background-color: var(--color-primary-orange);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; 
+    font-size: var(--font-body-size);
+    font-family: var(--font-body);
+    padding: 30px; /* Adiciona padding para distanciamento */
+}
+
+.container-cards-differences {
+    display: flex;
+    align-items: center;   
+    /* CRUCIAL: Permite que os cards quebrem a linha */
+    /* flex-wrap: wrap;  */
+    padding: 0 20px; /* Adiciona padding lateral para telas maiores */
+    color: var(--color-primary-terra); 
+}
+/* 1. Estilo do Contêiner que Alinha a Linha-Texto-Linha */
+.title-with-separators {
+    display: flex; /* Habilita o Flexbox */    
+    align-items: center; /* Centraliza verticalmente o texto e a linha */
+    width: 95%; /* Define uma largura máxima para o componente (ajuste conforme necessário) */
+    margin: 0px auto; /* Centraliza horizontalmente e adiciona margens superior/inferior */
+    
+    
+}
+
+/* 2. Estilo do Título (Nossos Pães) */
+.title-with-separators h2 {
+    /* Cor e tamanho aproximados da imagem 2 */
+    color: var(--color-primary-terra); /* Cor da Fonte */
+    font-size: var(--font-hideline-h2-size);
+    font-family: var(--font-title);
+    white-space: nowrap; /* Impede que o texto quebre a linha */
+    padding: 0 15px; /* Espaço entre o texto e a linha */
+    margin: 0; /* Remove margem padrão */
+    
+}
+
+/* 3. Estilo das Linhas Horizontais */
+.line-separator {
+    flex-grow: 1; /* Faz a div preencher o espaço restante */
+    height: 2px; /* Espessura da linha (ajuste para a espessura desejada) */
+    background-color: var(--color-primary-terra);
+    
+}
+
+.container-btn {
+    width: 100%; /* Ocupa a largura da seção pai */
+    display: flex; 
+    justify-content: center; /* Centraliza o botão */
+}
+
+
+
+
+
+
+/* --- Media Query para Telas Pequenas (Celulares: 650px e abaixo) --- */
+@media (max-width: 650px) {
+    
+    .sectionOurBreads {
+        gap: 20px;
+    }
+
+    /* Oculta as linhas laterais para dar mais espaço ao título principal */
+    .line-separator {
+        display: none;
+    }
+
+    /* Reduz o padding do título */
+    .title-with-separators h2 {
+        padding: 0 10px;
+        font-size: calc(var(--font-hideline-h2-size) * 0.8);
+    }
+
+    .container-cards-differences {
+        /* Garante que o layout fique centralizado e os cards empilhados */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .container-cards-differences > div {
+        /* Em telas pequenas, o card ocupará a maior parte da largura da tela */
+        width: 85vw; 
+        max-width: 90%; 
+        flex-basis: auto;
+    }
+}
