@@ -1,12 +1,13 @@
 .header-top-bar {
-    background-color: var(--cor-secondary-dark);
-    color: var(--color-secondary-white);
-    text-align: center;
-    padding: 10px 5%;
+    background-color: var(--cor-secondary-dark); 
+    text-align: center;  
+    padding: 10px; 
+
 }
 .header-title-top {
-    font-size: 0.8em;
-    letter-spacing: 2px;
+    font-size: var(--font-body-size);
+    color: var(--color-secondary-white);    
+    
 }
 .main-header {
     background-color: var(--color-primary-orange);
@@ -14,7 +15,7 @@
     /* Alinha o grupo esquerdo e o botão WhatsApp nas extremidades */
     gap: 310px;
     align-items: center; 
-    padding: 20px 5%; 
+    padding: 20px 70px; 
     
 }
 .header-left {

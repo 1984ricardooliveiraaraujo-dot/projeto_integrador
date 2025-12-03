@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import "./style.css"; // Importa o CSS
+import "./style.css";
 import logo from "../../../../src/assets/images/Logo.svg";
 import axios from "axios";
 import whats from "../../../../src/assets/images/whatsapp.svg";
 
 export const Header = () => {
   // 1. Estado para armazenar os dados de temperatura
-  const [temperatura, setTemperatura] = useState([]);
+  // iniciar com NULL, pois a API retorna um OBJETO (não um Array).
+  const [temperatura, setTemperatura] = useState(null);
 
   const cidade = "Barueri";
   const key = "d6923e7a2a6f4109b7c3d3c1bbf86eab";
@@ -16,49 +17,70 @@ export const Header = () => {
       .get(
         `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&units=metric&appid=${key}&lang=pt_br`
       )
-      //   `https://pro.openweathermap.org/data/2.5/forecast/climate?q=${cidade}&appid=${key}`
-      // )
-
       .then((response) => {
-        // .then trata o sucesso, jogando para dentro da variavel data
         console.log(response.data);
-
-        setTemperatura(response.data); //Se a solicitação for bem-sucedida, os dados recebidos (data) são usados para atualizar o estado users (a lista de personagens).
+        setTemperatura(response.data);
       })
-
       .catch((err) => console.log(err));
   }, []);
 
+  // 1. CHECAGEM: Se 'temperatura' for nulo OU não tiver a propriedade 'main',
+  // significa que os dados ainda estão carregando ou falharam.
+  if (!temperatura || !temperatura.main) {
+    // 2. RETORNO ANTECIPADO (Early Return): Mostra o cabeçalho com a mensagem de carregamento.
+    return (
+      <header className="container-header">
+        <div className="header-top-bar">
+          <span className="header-title-top">SEJA BEM VINDO!</span>
+        </div>
+        <div className="main-header">
+          <div className="header-left">
+            <img src={logo} alt="Logo" className="header-image" />
+
+            {/* O bloco de clima mostra apenas a mensagem de carregamento */}
+            <div className="header-climate-info">
+              <div className="temperature-header">
+                <p>Carregando dados de clima...</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Mantendo Navegação e WhatsApp no retorno de carregamento */}
+          <nav className="nav-header">{/* ... Navegação ... */}</nav>
+          <nav className="header-right-actions">{/* ... WhatsApp ... */}</nav>
+        </div>
+        <div className="separator-header"></div>
+      </header>
+    );
+  }
+
   return (
     <header className="container-header">
+      {/* todo o header */}
       <div className="header-top-bar">
         <span className="header-title-top">SEJA BEM VINDO!</span>
       </div>
+
       <div className="main-header">
-        {/* NOVO AGRUPAMENTO: Este contêiner irá alinhar o Logo, Clima e Navegação horizontalmente */}
         <div className="header-left">
-          {/* 1. LOGO: Fica sozinho para ser alinhado separadamente pelo cabecalho-left */}
+          {/* 1. LOGO */}
           <img src={logo} alt="" className="header-image" />
-          {/* 2. CLIMA E TEMPERATURA: Agora contém APENAS o texto do clima */}
+
+          {/* 2. CLIMA E TEMPERATURA: AGORA COM DADOS GARANTIDOS */}
           <div className="header-climate-info">
             <div className="temperature-header">
-              {/* {temperatura && temperatura.main ? ( */}
+              {/* Note que as verificações 'temperatura && temperatura.main ?' não são mais necessárias aqui */}
               <p className="local-temperature">Hoje em: {temperatura.name}</p>
 
-              {temperatura && temperatura.main ? (
-                <div className="temperature-values">
-                  {/* Acessando diretamente as propriedades do objeto temperatura */}
-                  <p>{Math.round(temperatura.main.temp_max)}°Máx</p>
-
-                  <p>{Math.round(temperatura.main.temp_min)}°Mín</p>
-                </div>
-              ) : (
-                // Opcional: Mostre uma mensagem de carregamento ou null enquanto os dados não chegam
-                <p>Carregando dados de clima...</p>
-              )}
+              <div className="temperature-values">
+                <p>{Math.round(temperatura.main.temp_max)}°Máx</p>
+                <p>{Math.round(temperatura.main.temp_min)}°Mín</p>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* 3. NAVEGAÇÃO */}
         <nav className="nav-header">
           <ul className="navigation-list">
             <li>
@@ -72,15 +94,18 @@ export const Header = () => {
             </li>
           </ul>
         </nav>
+
+        {/* 4. AÇÕES DIREITAS (WhatsApp) */}
         <nav className="header-right-actions">
           <a
             href="https://api.whatsapp.com/send?phone=SEU_NUMERO_AQUI&text=Olá! Gostaria de fazer um pedido."
             target="_blank"
             className="whatsapp-button"
+            rel="noopener noreferrer" // Boa prática para target="_blank", gera mais segurança para o usuario
           >
             <img src={whats} alt="WhatsApp Icon" className="whatsapp-icon" />{" "}
-          </a>{" "}
-        </nav>{" "}
+          </a>
+        </nav>
       </div>
       <div className="separator-header"></div>
     </header>
