@@ -1,0 +1,50 @@
+
+
+.card-comment-item {
+    position: relative;
+    z-index: 10; 
+    margin-top: 50px; 
+}
+
+.card-content-box {
+    color: var(--color-primary-terra);    
+    /* 🎯 AJUSTE DE DIMENSÕES: 300 x 350 */
+    width: 300px; /* Largura ajustada conforme solicitado */
+    min-height: 350px; /* Altura mínima ajustada para 350px */    
+    border-radius: 25px;
+    background-color: var(--color-primary-terra-opaco);    
+    /* 🎯 AJUSTE DE POSICIONAMENTO: Centraliza o texto verticalmente */
+    /* Empurra o texto para baixo, dando espaço para a foto + alinhamento vertical */
+    padding-top: 100px; /* Aumenta um pouco para empurrar o texto para o centro vertical */
+    padding-left: 30px; /* Mantém o padding lateral */
+    padding-right: 30px; /* Mantém o padding lateral */
+    padding-bottom: 30px; /* Mantém o padding inferior */    
+    text-align: left;
+     
+    
+
+}
+.card-avatar-container {
+position: absolute;
+top: -50px; /* Move 50px para cima (metade da altura) */
+left: 10%;
+
+}
+.card-description{
+    text-align: left; 
+    line-height: 2;
+    width: 215px;
+    margin-bottom: 60px; /* Adiciona espaço entre depoimento e nome */
+    font-size: var(--font-body-size);
+    font-family: var(--font-body);
+    color: var(--cor-secondary-dark);
+}
+
+.card-name{
+    text-align: left;
+    font-size: var(--font-hideline-h4-size);
+    font-family: var(--font-title);
+    color: var(--cor-secondary-dark);
+    margin-top: 0;
+
+}

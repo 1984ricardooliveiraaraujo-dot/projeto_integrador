@@ -40,7 +40,14 @@
 }
 
 /* 3. Estilo das Linhas Horizontais */
-.line-separator {
+.line-separator-1 {
+    flex-grow: 1; /* Faz a div preencher o espaço restante */
+    height: 2px; /* Espessura da linha (ajuste para a espessura desejada) */
+    background-color: var(--color-primary-terra);
+   
+    
+}
+.line-separator-2 {
     flex-grow: 1; /* Faz a div preencher o espaço restante */
     height: 2px; /* Espessura da linha (ajuste para a espessura desejada) */
     background-color: var(--color-primary-terra);
@@ -51,42 +58,6 @@
     width: 100%; /* Ocupa a largura da seção pai */
     display: flex; 
     justify-content: center; /* Centraliza o botão */
+    
 }
 
-
-
-
-
-
-/* --- Media Query para Telas Pequenas (Celulares: 650px e abaixo) --- */
-@media (max-width: 650px) {
-    
-    .sectionOurBreads {
-        gap: 20px;
-    }
-
-    /* Oculta as linhas laterais para dar mais espaço ao título principal */
-    .line-separator {
-        display: none;
-    }
-
-    /* Reduz o padding do título */
-    .title-with-separators h2 {
-        padding: 0 10px;
-        font-size: calc(var(--font-hideline-h2-size) * 0.8);
-    }
-
-    .container-cards-differences {
-        /* Garante que o layout fique centralizado e os cards empilhados */
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    
-    .container-cards-differences > div {
-        /* Em telas pequenas, o card ocupará a maior parte da largura da tela */
-        width: 85vw; 
-        max-width: 90%; 
-        flex-basis: auto;
-    }
-}

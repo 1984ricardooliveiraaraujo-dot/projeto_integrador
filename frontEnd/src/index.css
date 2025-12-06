@@ -8,9 +8,10 @@
 
 /* Variáveis de cores baseadas no screenshot */
 :root {
-    
+    /* font-size */
     --color-primary-orange: #E3D4CF; /* Cor bege claro */
     --color-primary-terra: #5B2E0F;
+    --color-primary-terra-opaco: rgba(91, 45, 15, 0.45);
     --cor-secondary-gray: #333333;
     --color-alerts-green: #004E05; /* Verde WhatsApp */
     --color-alerts-red: #770000;
@@ -24,6 +25,7 @@
     --font-button-size: 20px;
     --font-body-size: 20px;
 
+     /* font-family */
     --font-title:"Josefin Sans", sans-serif;
     --font-body:"Yanone Kaffeesatz", sans-serif;
 

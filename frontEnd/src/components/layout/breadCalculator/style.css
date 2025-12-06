@@ -1,0 +1,126 @@
+.calculadora-container {
+    background-color: var(--color-primary-orange);
+    text-align: center;
+    min-height: 80vh;
+    font-family: sans-serif; /* Usando uma fonte simples */
+    
+}
+
+.calculadora-container h1 {
+    font-size: 2.2em;
+    color: var(--color-primary-terra);
+    margin-bottom: 5px;
+}
+
+.calculadora-container h2 {
+    font-size: 1.2em;
+    color: var(--color-primary-terra);
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+/* --- Layout de Grid para os Cards --- */
+
+.card-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* Espaço entre os cards */
+    flex-wrap: wrap; 
+}
+
+/* --- Estilo Base dos Cards --- */
+
+.card-box {
+    background-color: var(--color-primary-terra-opaco);
+    color: var(--color-primary-terra);
+    border-radius: 10px;
+    padding: 60px;
+    width: 375px; 
+    min-height: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--color-primary-terra); /* Títulos em cor escura */
+}
+
+.card-box p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* --- Estilo do Contador (Coluna 1) --- */
+
+.contador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.contador-btn {
+    background-color: var(--color-primary-orange);
+    color: var(--color-primary-terra);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 0 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contador-valor {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-primary-terra);
+}
+
+/* --- Estilo da Coluna de Resultado (Coluna 3) --- */
+
+.resultado-box {
+    text-align: left; /* Alinha os resultados à esquerda */
+    padding-left: 40px;
+}
+
+.quantidade-item {
+    /* Corrigido para corresponder à imagem (apenas o número de unidades) */
+    font-size: 1.4em !important;
+    font-weight: bold;
+    color: var(--color-primary-terra);
+}
+
+/* --- Botão Cardápio --- */
+
+.container-btn {
+    width: 100%; /* Ocupa a largura da seção pai */
+    display: flex; 
+    justify-content: center; /* Centraliza o botão */
+    padding: 30px;
+    
+}
+
+
+.title-with-separators h2 {
+    /* Cor e tamanho aproximados da imagem 2 */
+    color: var(--color-primary-terra); /* Cor da Fonte */
+    font-size: var(--font-hideline-h2-size);
+    font-family: var(--font-title);
+    white-space: nowrap; /* Impede que o texto quebre a linha */
+    padding: 0 15px; /* Espaço entre o texto e a linha */
+    margin: 0; /* Remove margem padrão */
+    
+}
+
+/* 3. Estilo das Linhas Horizontais */
+.line-separator-1 {
+    flex-grow: 1; /* Faz a div preencher o espaço restante */
+    height: 2px; /* Espessura da linha (ajuste para a espessura desejada) */
+    background-color: var(--color-primary-terra);
+    
+}

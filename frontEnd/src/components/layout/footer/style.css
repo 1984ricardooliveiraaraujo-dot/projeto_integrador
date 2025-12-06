@@ -1,0 +1,209 @@
+.main-footer-container {
+    background-color: var(--color-primary-orange); /* Fundo Marrom Escuro Principal (da borda) */
+   
+}
+
+/* Container interno que segura as 3 colunas e tem o fundo bege claro */
+.footer-content-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: var(--color-primary-orange); /* Fundo Bege Claro das Colunas */
+    color: var(--color-primary-terra); /* Cor do texto dentro do bege */
+}
+
+
+.separatorFooter {    
+    display: flex; /* Habilita o Flexbox */
+    align-items: center; /* Centraliza verticalmente o texto e a linha */
+    width: 95%; /* Define uma largura máxima para o componente (ajuste conforme necessário) */
+    max-width: 1800px; /* Impede que ele fique muito largo em telas grandes */
+    margin: 0px auto; /* Centraliza horizontalmente e adiciona margens superior/inferior */
+    flex-grow: 1; /* Faz a div preencher o espaço restante */
+    height: 2px; /* Espessura da linha (ajuste para a espessura desejada) */
+    background-color: var(--color-primary-terra);
+    
+    
+}
+
+/* ----------------------------------- */
+/* 2. Estilos das Colunas e Títulos */
+/* ----------------------------------- */
+
+.footer-column {
+    padding: 10px;    
+    flex-basis: 30%; 
+}
+
+.localizacao-column {
+    flex-basis: 40%; /* Dá um pouco mais de espaço para o mapa */
+}
+
+.column-title {
+    font-size: var(--font-hideline-h3-size);
+    font-family: var(--font-title);
+    padding: 10px;
+    color: var(--color-primary-terra); /* Título em Marrom Escuro */
+    
+}
+
+.column-title-4{
+    font-size: var(--font-hideline-h4-size);
+    font-family: var(--font-title);
+    padding: 5px;
+    color: var(--color-primary-terra); /* Título em Marrom Escuro */
+    gap: 5px;
+}
+
+.column-title .icon {    
+    margin-left: 10px;
+}
+
+/* ----------------------------------- */
+/* 3. Coluna Contato */
+/* ----------------------------------- */
+.contato-info{
+    padding: 5px;
+    }
+    
+.contato-info p {
+    color: var(--color-primary-terra); /* Cor do texto, mantendo a consistência */
+    font-size: var(--font-body-size);
+    font-family: var(--font-body);
+    text-decoration: none;
+    padding: 5px;
+}
+
+.email-link {
+    color: var(--color-primary-terra); /* Cor do texto, mantendo a consistência */
+    font-size: var(--font-body-size);
+    font-family: var(--font-body);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.email-link:hover {
+    color: var(--color-secondary-white);
+
+}
+
+.social-area {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+.social-icons {
+    display: flex;    
+    gap: 15px;
+    padding: 15px;    
+   
+}
+
+
+
+.social-link {
+    display: flex;
+    align-items: end;
+    height: 100px;
+    transition: 0.3s;  
+
+}
+.social-link:hover{
+     
+    transform: translateY(-10px);   
+}
+
+
+
+
+/* ----------------------------------- */
+/* 4. Coluna Menu */
+/* ----------------------------------- */
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    color: var(--color-primary-terra); /* Cor do texto, mantendo a consistência */
+    font-size: var(--font-body-size);
+    font-family: var(--font-body);
+    text-decoration: none;
+    padding: 5px;
+    transition: color 0.3s;
+}
+.nav-item:hover {
+    color: var(--color-secondary-white);
+
+}
+
+/* ----------------------------------- */
+/* 5. Coluna Localização (Mapa) */
+/* ----------------------------------- */
+
+.mapa-placeholder iframe {
+  width: 100%; /* Ocupa toda a largura da coluna */
+  height: 250px; /* Altura fixa (ajuste conforme necessário) */
+  border: 1px solid #ccc; /* Borda leve ao redor do mapa */
+}
+
+/* ----------------------------------- */
+/* 6. Copyright (Rodapé Fixo) */
+/* ----------------------------------- */
+
+.footer-copyright {
+    text-align: center;
+    padding: 15px 20px;
+    background-color: var(--color-primary-orange); /* Fundo Marrom Escuro no Copyright */
+    color: var(--color-primary-terra);
+    font-size: 0.8rem;
+}
+
+/* ----------------------------------- */
+/* 7. Responsividade (Obrigatório) */
+/* ----------------------------------- */
+
+@media (max-width: 768px) {
+.footer-content-column {
+        flex-direction: column; /* Pilha as colunas verticalmente */
+        align-items: center; /* CORREÇÃO CHAVE: Centraliza as colunas */
+        padding: 40px 20px; /* Ajusta o padding do container principal */
+    }
+
+.footer-column {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+        padding: 0 5px;
+        text-align: center; /* CORREÇÃO CHAVE: Centraliza o texto e títulos dentro da coluna */
+        width: 100%;
+    }
+
+.localizacao-column {
+        max-height: 200px; 
+    }
+
+    /* Área Social (Imagem da Logo + Ícones) */
+    .social-area {
+        justify-content: center; /* Centraliza a imagem e os ícones dentro do seu contêiner */
+        margin-top: 30px; 
+        width: 100%; /* Garante que o contêiner ocupe a largura total para centralizar */
+    }
+
+    /* Grupo de Ícones Sociais */
+    .social-icons {
+        justify-content: center; 
+        padding: 0;
+    }
+    
+    /* Menu de Navegação */
+    .footer-nav {
+        align-items: center; /* Centraliza os links verticalmente */
+    }
+}

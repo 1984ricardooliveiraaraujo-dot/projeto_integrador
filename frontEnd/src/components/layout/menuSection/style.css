@@ -1,0 +1,156 @@
+.body-menu{
+    background-color: var(--color-primary-orange);
+}
+img-section{
+    padding: 30px;
+}
+/* Container principal */
+.menu-container {
+    width: 600px; 
+    padding: 30px;    
+    margin: 0 auto;
+    position: relative;
+}
+    
+.menu-image-bread-1 {
+  position: absolute; /* Posiciona a imagem de forma absoluta */
+  top: 120px; /* Ajuste para descer a imagem */
+  left: -250px; /* Ajuste para mover para a esquerda */
+  width: 200px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  /* Garante que a imagem não "vaze" sobre o texto se não for um SVG */
+  z-index: 1; 
+}
+.menu-image-bread-2 {
+  position: absolute; /* Posiciona a imagem de forma absoluta */
+  top: 300px; /* Ajuste para descer a imagem */
+  left: -250px; /* Ajuste para mover para a esquerda */
+  width: 200px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  /* Garante que a imagem não "vaze" sobre o texto se não for um SVG */
+  z-index: 1; 
+}
+
+.menu-image-bread-3 {
+  position: absolute; /* Posiciona a imagem de forma absoluta */
+  top: 405px; /* Ajuste para descer a imagem */
+  left: -250px; /* Ajuste para mover para a esquerda */
+  width: 200px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  /* Garante que a imagem não "vaze" sobre o texto se não for um SVG */
+  z-index: 1; 
+}
+.menu-image-bread-4 {
+  position: absolute; /* Posiciona a imagem de forma absoluta */
+  top: 585px; /* Ajuste para descer a imagem */
+  left: -250px; /* Ajuste para mover para a esquerda */
+  width: 200px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  /* Garante que a imagem não "vaze" sobre o texto se não for um SVG */
+  z-index: 1; 
+}
+/* Título principal */
+.menu-title {
+    text-align: center;
+    color: var(--color-primary-terra);
+    font-family: var(--font-title);
+    font-size: var(--font-hideline-h1-size);
+    margin-bottom: 5px;
+}
+
+/* Subtítulo */
+.menu-subtitle {
+    text-align: center;
+    color: var(--color-primary-terra);
+    font-family: var(--font-title);
+    font-size: var(--font-hideline-h4-size);
+    margin-bottom: 30px;
+}
+
+/* Seção do menu */
+.menu-section {
+    margin-bottom: 30px;
+}
+
+/* Título da seção (Salgados/Doces) */
+.section-title-salgados, .section-title-doces {
+    color:var(--color-primary-terra);
+    font-size: var(--font-body-size);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Cabeçalho de preços dos Salgados */
+.price-header-salgados {
+    display: flex;
+    font-weight: bold;
+    color: var(--color-primary-terra);
+    margin-bottom: 10px;
+}
+
+/* Espaçador no cabeçalho */
+.header-spacer {
+    flex-grow: 1; /* Ocupa o espaço onde ficaria o nome */
+}
+
+/* Colunas de preço do cabeçalho */
+.header-padrao, .header-medio, .header-gigante {
+    width: 80px;
+    text-align: right;
+    margin-left: 10px;
+}
+
+/* Item de Salgado */
+.menu-item-salgado {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+   
+}
+
+/* Nome do item */
+.item-name {
+    flex-grow: 1;
+    color: var(--color-primary-terra);
+}
+
+/* Preços dos Salgados */
+.item-price-padrao, .item-price-medio, .item-price-gigante {
+    width: 80px;
+    text-align: right;
+    margin-left: 10px;
+    color: var(--color-primary-terra);
+    font-weight: bold;
+}
+
+/* Item de Doce */
+.menu-item-doce {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+   
+}
+
+/* Preço dos Doces */
+.item-price-doce {
+    width: 225px;    
+    color: var(--color-primary-terra);
+    font-weight: bold;
+}
+
+.teste{
+    position: fixed; 
+    bottom: 0px; /* Afasta da borda inferior do menu-container */
+    right: 70px; /* Afasta da borda direita do menu-container */
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    
+    
+    /* CORREÇÃO 3: Ajuste o posicionamento do botão flutuante em telas pequenas */
+    .teste {
+        bottom: 30px; 
+        right: 15px; 
+    }
+}

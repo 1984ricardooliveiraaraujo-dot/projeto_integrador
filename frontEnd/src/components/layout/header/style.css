@@ -96,3 +96,102 @@
 .whatsapp-icon{
     width: 200px;
 }
+
+
+/* Estilos aplicados quando a tela tem no máximo 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    /* 1. Resetar padding e permitir quebra de linha no header principal */
+    .main-header {
+        /* Reduz o padding horizontal em telas menores para dar mais espaço */
+        padding: 15px 20px; 
+        /* Permite que os itens do flex (header-left, nav-header, header-right-actions) quebrem para a linha de baixo se não houver espaço */
+        flex-wrap: wrap; 
+        /* Centraliza os itens quando eles quebram de linha */
+        justify-content: center;
+        /* Garante que os itens ocupem a largura total ao quebrar */
+        text-align: center;
+    }
+
+    /* 2. Ajuste do lado esquerdo (Logo + Clima) */
+    .header-left {
+        /* Permite que o grupo esquerdo ocupe a largura total */
+        width: 100%; 
+        /* Centraliza os itens dentro do header-left */
+        justify-content: center; 
+        /* Ajuste do gap para telas menores */
+        gap: 15px;
+    }
+
+    /* 3. Ajuste do bloco de clima */
+    .header-climate-info {
+        /* Centraliza o texto do clima (se necessário) */
+        justify-content: center;
+    }
+    
+    /* 4. Ajuste da Navegação */
+    .nav-header {
+        /* Permite que a navegação ocupe a largura total */
+        width: 100%; 
+        /* Altura menor para a navegação */
+        height: auto; 
+        /* Centraliza o conteúdo (lista) */
+        justify-content: center;
+        /* Adiciona um pouco de margem para separar do bloco acima/abaixo */
+        margin: 10px 0; 
+    }
+
+    .navigation-list {
+        /* Muda para empilhar verticalmente se for uma lista longa, mas horizontal para 3 itens geralmente funciona */
+        /* display: flex; (Manter se quiser horizontal) */
+        /* Reduz o espaçamento entre os links */
+        gap: 20px; 
+    }
+    
+    .navigation-list li {
+        margin: 0 5px; /* Adiciona margem entre os itens */
+    }
+
+
+    /* 5. Ajuste do botão do WhatsApp */
+    .header-right-actions {
+        /* Permite que o botão ocupe a largura total */
+        width: 100%; 
+        /* Centraliza o botão do WhatsApp */
+        display: flex; 
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .whatsapp-icon {
+        /* Reduz o tamanho do ícone/botão do WhatsApp para não ser muito grande em celular */
+        width: 150px; 
+    }
+}
+
+/* Estilos adicionais para telas muito pequenas (ex: largura menor que 480px) */
+@media (max-width: 480px) {
+    .header-image {
+        /* Reduz um pouco o tamanho do logo em telas muito pequenas */
+        width: 80px;
+    }
+    
+    .navigation-list {
+        /* Força a lista de navegação a empilhar verticalmente em telas muito pequenas */
+        flex-direction: column; 
+        gap: 5px; /* Espaço menor entre os itens empilhados */
+    }
+    
+    .navigation-list a,
+    .local-temperature,
+    .temperature-values p {
+        /* Reduz o tamanho da fonte em telas muito pequenas */
+        font-size: small; 
+    }
+    
+    /* Faz com que o clima e o logo ocupem a largura total e fiquem empilhados verticalmente em telas muito pequenas */
+    .header-left {
+        flex-direction: column;
+        align-items: center; /* Centraliza a imagem e o texto do clima */
+        gap: 5px;
+    }
+}

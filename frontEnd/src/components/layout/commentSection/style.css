@@ -1,0 +1,101 @@
+
+.section-comment {
+    background-color: var(--color-primary-orange);
+    padding: 60px 20px;
+    text-align: center;
+    min-height: 100vh;
+    
+}
+
+.section-comment h2 {
+    font-size: var(--font-hideline-h2-size);
+    font-family: var(--font-title);
+    color: var(--color-primary-terra);
+    margin-bottom: 40px;
+}
+
+/* Container que mantém todos os cartões */
+.container-comment {
+    display: flex;
+    justify-content: center;
+}
+
+/* Div que agrupa os comentários. Use display flex para colocá-los lado a lado, se for o layout desejado */
+.cliente-comment {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+    gap: 40px; /* Espaçamento entre os cards */
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* 🎯 AJUSTE DO ESPAÇO ENTRE CARDS: 150px solicitado */
+    gap: 150px; 
+}
+
+
+.cliente-comment {
+    /* Estiliza o container do primeiro CardComments para que o fundo marrom
+       e o avatar funcionem corretamente.
+    */
+    position: relative;
+    z-index: 1; /* Garante que o primeiro card fique por cima dos outros se estiverem próximos */
+    margin-top: 50px; /* Adiciona espaço no topo para o avatar sobreposto */
+}
+
+
+
+.cliente-comment .card-content {
+    background-color: var(--color-primary-terra); /* Marrom-Rosado da imagem */
+    border-radius: 20px;
+    padding: 30px;
+    padding-top: 80px; /* Mais espaço no topo para o avatar */
+    width: 300px;     
+    text-align: left;
+    
+}
+
+/* Estilização do Avatar (assumindo que o avatar tem a classe .avatar-img-container) 
+   
+   Você precisará garantir que o componente CardComments renderize uma div 
+   com uma classe que possa ser estilizada assim.
+*/
+.cliente-comment  .avatar-img-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: -50px; /* Move para cima */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid white; 
+    z-index: 10;
+}
+.title-with-separators {
+    display: flex; /* Habilita o Flexbox */    
+    align-items: center; /* Centraliza verticalmente o texto e a linha */
+    width: 95%; /* Define uma largura máxima para o componente (ajuste conforme necessário) */
+    margin: 0px auto; /* Centraliza horizontalmente e adiciona margens superior/inferior */
+    
+    
+}
+
+/* 2. Estilo do Título (Nossos Pães) */
+.title-with-separators h2 {
+    /* Cor e tamanho aproximados da imagem 2 */
+    color: var(--color-primary-terra); /* Cor da Fonte */
+    font-size: var(--font-hideline-h2-size);
+    font-family: var(--font-title);
+    white-space: nowrap; /* Impede que o texto quebre a linha */
+    padding: 0 15px; /* Espaço entre o texto e a linha */
+    margin: 0; /* Remove margem padrão */
+    
+}
+
+/* 3. Estilo das Linhas Horizontais */
+.line-separator-1 {
+    flex-grow: 1; /* Faz a div preencher o espaço restante */
+    height: 2px; /* Espessura da linha (ajuste para a espessura desejada) */
+    background-color: var(--color-primary-terra);
+    
+}

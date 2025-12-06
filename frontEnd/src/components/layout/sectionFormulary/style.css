@@ -1,0 +1,197 @@
+.contato-page-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 60px;
+    gap: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-primary-orange); /* Cor de fundo da sua imagem */
+}
+
+
+
+
+.contato-page-container p {
+    font-size: var(--font-body-size);
+    font-family: var(--font-body);
+    color: var(--color-primary-terra);
+    
+}
+
+
+/* ----------------------------------- */
+/* 3. Caixa de Conteúdo (Content Box) */
+/* ----------------------------------- */
+
+.contato-content-box {
+    display: flex;
+    max-width: 1000px; /* Limite para a largura total */
+    width: 90%;      
+    gap: 60px; /* Espaçamento entre a imagem e o formulário */
+    margin-top: 30px; /* Espaçamento após a descrição */
+    align-items: flex-start; /* Alinha os itens no topo */
+    
+}
+    
+
+
+/* ----------------------------------- */
+/* 4. Área da Imagem (Lado Esquerdo) */
+/* ----------------------------------- */
+.imagem-mockup-area {
+    /* CORREÇÃO: Define que a área da imagem ocupa exatamente 50% */
+    flex-basis: 52%;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+    flex-grow: 1; /* Permite que cresça junto com o contêiner */
+    max-width: none; /* Remove a restrição de tamanho máximo anterior */    
+    /* ESTILOS DE BORDA (mantidos) */
+    border-radius: 20px; 
+    overflow: hidden; 
+    box-shadow: 5px 5px 5px 5px rgba(91, 45, 15, 0.45);
+    
+}
+
+.imagem-mockup-area img {
+    /* CORREÇÃO CHAVE 2: Faz a imagem ocupar 100% do seu contêiner (350px) */
+    width: 100%;
+    height: auto;
+    display: block; /* Remove possíveis margens de inline */
+}
+/* ----------------------------------- */
+/* 5. Formulário (Lado Direito) */
+/* ----------------------------------- */
+
+.formulario-contato {
+    flex: 1; /* Ocupa o espaço restante */
+    flex-basis: 60%; /* Sugere que comece com 60% da largura */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;     
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px rgba(91, 45, 15, 0.45);
+}
+
+.formulario-contato label {
+    color: var(--color-primary-terra);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.formulario-contato input[type="text"],
+.formulario-contato input[type="email"],
+.formulario-contato input[type="tel"],
+.formulario-contato textarea {
+    
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-primary-orange); /* Cor de fundo da sua imagem */; /* Borda mais clara */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #333;
+    background-color: white; /* Fundo branco para os inputs */
+}
+
+/* 5.1. Agrupamento de Campos Pequenos (Whatsapp, Torre, Apto) */
+.campo-agrupado {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os campos */
+    margin-bottom: 15px; /* Espaço após o agrupamento */
+}
+
+.campo-pequeno {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Faz com que todos os 3 campos tenham o mesmo tamanho */
+}
+
+.campo-pequeno input {
+    /* Ajusta a largura dos inputs dentro do agrupamento */
+    width: auto;
+}
+
+/* 5.2. Botão Enviar */
+.botao-enviar {
+    background-color: var(--color-primary-terra); /* Cor marrom escura do botão */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 30px;
+    align-self: flex-end; /* Alinha o botão à direita */
+    transition: background-color 0.3s ease;
+}
+
+.botao-enviar:hover {
+    background-color:var(--color-primary-terra); /* Escurece no hover */
+}
+
+/* ----------------------------------- */
+/* 6. Media Queries (Responsividade) */
+/* ----------------------------------- */
+
+@media (max-width: 768px) {
+    /* 1. Ajuste do Container Principal da Página */
+    .contato-page-container {
+        padding: 30px 10px; /* Reduz o padding para não espremer o conteúdo */
+    }
+    
+    /* 2. Caixa de Conteúdo (Content Box) */
+    .contato-content-box {
+        flex-direction: column; /* Pilha os elementos */
+        max-width: 100%; /* Ocupa a largura total em mobile */
+        width: 100%;
+        gap: 20px;
+        padding: 0 20px; /* Adiciona padding para não encostar nas bordas da tela */
+        box-sizing: border-box; 
+    }
+
+    /* 3. Títulos e Texto (Centralização) */
+    .contato-page-container h2, 
+    .contato-page-container p {
+        text-align: center; /* CORREÇÃO: Centraliza os títulos e parágrafos */
+    }
+
+    /* O elemento que envolve o título e separadores */
+    .title-with-separators {
+        flex-direction: column; /* Se estiver usando flexbox, empilha */
+        align-items: center; /* Centraliza verticalmente */
+        width: 100%;
+    }
+    
+    /* 4. Imagem (Se você deseja que ela apareça em mobile) */
+    .imagem-mockup-area {
+        /* Se você QUER que a imagem apareça: */
+        display: block; /* Garante que não esteja escondida */
+        width: 100%;
+        flex-basis: auto; /* Permite que ocupe a largura total */
+        margin-bottom: 20px;
+        box-shadow: none; /* Opcional: Remove a sombra em mobile */
+    }
+
+    /* 5. Formulário */
+    .formulario-contato {
+        padding: 20px; 
+        width: 100%; 
+        box-shadow: none; 
+    }
+
+    /* 6. Campos Agrupados (Whatsapp, Torre, Apto) */
+    .campo-agrupado {
+        flex-direction: column; /* Coloca os campos agrupados um abaixo do outro */
+        gap: 0;
+    }
+    
+    /* 7. Botão Enviar */
+    .botao-enviar {
+        width: 100%; 
+        align-self: stretch; /* Ocupa a largura total */
+    }
+}

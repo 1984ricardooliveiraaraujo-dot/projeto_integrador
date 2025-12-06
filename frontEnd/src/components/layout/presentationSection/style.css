@@ -63,7 +63,7 @@
 .separatorPresentation {    
     display: flex; /* Habilita o Flexbox */
     align-items: center; /* Centraliza verticalmente o texto e a linha */
-    width: 100%; /* Define uma largura máxima para o componente (ajuste conforme necessário) */
+    width: 95%; /* Define uma largura máxima para o componente (ajuste conforme necessário) */
     max-width: 1800px; /* Impede que ele fique muito largo em telas grandes */
     margin: 0px auto; /* Centraliza horizontalmente e adiciona margens superior/inferior */
     flex-grow: 1; /* Faz a div preencher o espaço restante */
@@ -78,3 +78,4 @@
     height: auto;
     display: block;
 }
+
