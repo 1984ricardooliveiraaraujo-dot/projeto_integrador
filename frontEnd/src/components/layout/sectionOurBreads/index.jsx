@@ -8,9 +8,9 @@ export const SectionOurBreads = () => {
   return (
     <section className="sectionOurBreads">
       <div className="title-with-separators">
-        <div className="line-separator"></div>
+        <div className="line-separator-1"></div>
         <h2>Nossos Pães</h2>
-        <div className="line-separator"></div>
+        <div className="line-separator-2"></div>
       </div>
 
       <div className="container-cards-differences">
@@ -32,7 +32,7 @@ export const SectionOurBreads = () => {
       </div>
 
       <nav className="container-btn">
-        <a href="" className="btn-primary">
+        <a href="/menu" className="btn-primary">
           Ver Cardápio
         </a>
       </nav>
